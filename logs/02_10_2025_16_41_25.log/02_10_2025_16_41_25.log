@@ -1,2 +1,0 @@
-[ 2025-02-10 16:41:25,681 ] 19 root - INFO - Entered the try block..
-[ 2025-02-10 16:41:25,682 ] 23 root - INFO - Error occured in [D:\SureshKrishna\CompleteDS\Projects-EndToEnd\End-End-ML-Project-2\NetworkSecurity\networksecurity\exception\exception.py] line number [20] error message [division by zero]
