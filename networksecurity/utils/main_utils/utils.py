@@ -3,7 +3,7 @@ from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logging.logger import logging
 import os,sys
 import numpy as np
-#import dill
+import dill
 import pickle
 
 from sklearn.metrics import r2_score
@@ -26,4 +26,29 @@ def write_yaml_file(file_path: str, content: object, replace: bool = False) -> N
             yaml.dump(content, file)
     except Exception as e:
         raise NetworkSecurityException(e, sys)
+    
+
+def save_numpy_array_data(file_path: str,array: np.array):
+    try:
+        dir_path=os.path.dirname(file_path)
+        os.makedirs(dir_path,exist_ok=True)
+
+        with open(file_path,'wb') as obj:
+            np.save(obj,array)
+    except Exception as e:
+        raise NetworkSecurityException(e,sys) from e
+        
+    
+
+def save_obj(file_path: str,obj: object)->None:
+    try:
+        dir_path=os.path.dirname(file_path)
+        os.makedirs(dir_path,exist_ok=True)
+
+        with open(file_path,'wb') as file_obj:
+            pickle.dump(obj,file_obj)
+    except Exception as e:
+        raise NetworkSecurityException(e,sys) from e
+        
+
     
