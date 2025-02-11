@@ -8,6 +8,7 @@ import pickle
 
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
+import pandas as pd
 
 def read_yaml_file(file_path: str) -> dict:
     try:
@@ -51,13 +52,17 @@ def save_obj(file_path: str,obj: object)->None:
         raise NetworkSecurityException(e,sys) from e
         
 
-def load_obj(file_path:str)->object:
+def load_obj(file_path: str,)->object:
     try:
+        logging.info(f"Attempting to load file from: {os.path.abspath(file_path)}")
+
         if not os.path.exists(file_path):
             raise Exception(f"The file {file_path} is not exists..!")
         
         with open(file_path,'rb') as file_obj:
-            return pickle.load(file_obj)
+            loaded_obj=pickle.load(file_obj)
+            logging.info(f"Loaded object type: {type(loaded_obj)}")            
+            return loaded_obj
     except Exception as e:
         raise NetworkSecurityException(e,sys) from e
 
@@ -89,7 +94,7 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
             model.fit(X_train,y_train)
 
             #model.fit(X_train, y_train)  # Train model
-
+            logging.info("The Params : ",gs.best_params_)
             y_train_pred = model.predict(X_train)
 
             y_test_pred = model.predict(X_test)
@@ -97,6 +102,15 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
             train_model_score = r2_score(y_train, y_train_pred)
 
             test_model_score = r2_score(y_test, y_test_pred)
+            results=[]
+            results.append({
+        'Model': model,
+        'Best Parameters': gs.best_params_,
+        'Best Score': gs.best_score_,
+        'Best Estimator': gs.best_estimator_
+    })
+            results_df = pd.DataFrame(results)
+            results_df.to_csv('best_model_result/best_model_results.csv', index=False)
 
             report[list(models.keys())[i]] = test_model_score
 

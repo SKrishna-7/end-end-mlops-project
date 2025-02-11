@@ -8,5 +8,8 @@ pyaml
 dill
 dagshub
 mlflow
-## -e . 
+uvicorn
+fastapi
+
+-e . 
 

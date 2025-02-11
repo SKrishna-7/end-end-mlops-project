@@ -28,6 +28,8 @@ from urllib.parse import urlparse
 
 # import dagshub
 
+import dagshub
+dagshub.init(repo_owner='SKrishna-7', repo_name='NetworkSecurity', mlflow=True)
 
 
 class ModelTrainer:
@@ -62,21 +64,22 @@ class ModelTrainer:
         params={
             "Decision Tree": {
                 'criterion':['gini', 'entropy', 'log_loss'],
-                # 'splitter':['best','random'],
-                # 'max_features':['sqrt','log2'],
+                'splitter':['best','random'],
+                'max_features':['sqrt','log2'],
             },
             "Random Forest":{
-                # 'criterion':['gini', 'entropy', 'log_loss'],
+                'criterion':['gini', 'entropy', 'log_loss'],
+                'criterion':['gini', 'entropy'],
                 
-                # 'max_features':['sqrt','log2',None],
+                'max_features':['sqrt','log2',None],
                 'n_estimators': [8,16,32,128,256]
             },
             "Gradient Boosting":{
-                # 'loss':['log_loss', 'exponential'],
+                'loss':['log_loss', 'exponential'],
                 'learning_rate':[.1,.01,.05,.001],
                 'subsample':[0.6,0.7,0.75,0.85,0.9],
-                # 'criterion':['squared_error', 'friedman_mse'],
-                # 'max_features':['auto','sqrt','log2'],
+                'criterion':['squared_error', 'friedman_mse'],
+                'max_features':['auto','sqrt','log2'],
                 'n_estimators': [8,16,32,64,128,256]
             },
             "Logistic Regression":{},
@@ -106,17 +109,17 @@ class ModelTrainer:
         classification_test_metric=get_classification_score(y_true=ytest,y_pred=ytest_pred)
         self.track_mlflow(model,classification_test_metric)
         
-        preprocessor = load_obj(file_path=self.data_transformation_artifact.transformed_object_file_path)
+        # preprocessor = load_obj(file_path=self.data_transformation_artifact.transformed_object_file_path)
             
         model_dir_path = os.path.dirname(self.model_trainer_config.trained_model_file_path)
         os.makedirs(model_dir_path,exist_ok=True)
 
-        Network_Model=NetworkModel(preprocessor=preprocessor,model=best_model)
-        save_obj(self.model_trainer_config.trained_model_file_path,obj=Network_Model)
+        # Network_Model=NetworkModel(preprocessor=preprocessor,model=model)
+        save_obj(self.model_trainer_config.trained_model_file_path,obj=NetworkModel)
         #model pusher
-        save_obj("final_model/model.pkl",best_model)
+        save_obj("final_model/model.pkl",model)
         
-
+        
         ## Model Trainer Artifact
         model_trainer_artifact=ModelTrainerArtifact(trained_model_file_path=self.model_trainer_config.trained_model_file_path,
                              train_metric_artifact=classification_train_metric,

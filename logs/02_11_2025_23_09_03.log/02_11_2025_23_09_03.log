@@ -1,0 +1,35 @@
+[ 2025-02-11 23:09:09,454 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-02-11 23:09:09,463 ] 107 dagshub - INFO - Accessing as SKrishna-7
+[ 2025-02-11 23:09:10,057 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/SKrishna-7/NetworkSecurity "HTTP/1.1 200 OK"
+[ 2025-02-11 23:09:10,451 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-02-11 23:09:10,453 ] 107 dagshub - INFO - Initialized MLflow to track repo "SKrishna-7/NetworkSecurity"
+[ 2025-02-11 23:09:10,454 ] 107 dagshub - INFO - Repository SKrishna-7/NetworkSecurity initialized!
+[ 2025-02-11 23:09:20,439 ] 91 root - INFO - Runing Training Pipeline...
+[ 2025-02-11 23:09:20,440 ] 31 root - INFO - Start data ingestion..
+[ 2025-02-11 23:09:25,888 ] 47 root - INFO - Start data Validation...
+[ 2025-02-11 23:09:26,022 ] 37 root - INFO - Required number of columns : 2
+[ 2025-02-11 23:09:26,022 ] 38 root - INFO - Dataframe has  31 columns
+[ 2025-02-11 23:09:26,023 ] 37 root - INFO - Required number of columns : 2
+[ 2025-02-11 23:09:26,023 ] 38 root - INFO - Dataframe has  31 columns
+[ 2025-02-11 23:09:26,230 ] 63 root - INFO - Initiate the data transformation..
+[ 2025-02-11 23:09:26,230 ] 65 root - INFO - data Transformation Completed
+[ 2025-02-11 23:09:26,230 ] 62 root - INFO - Entered initiate data transformation...
+[ 2025-02-11 23:09:26,230 ] 66 root - INFO - Starting Data Transformation..
+[ 2025-02-11 23:09:26,254 ] 42 root - INFO - Entered data_transformer_obj method..!
+[ 2025-02-11 23:09:26,254 ] 46 root - INFO - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2025-02-11 23:09:26,254 ] 55 root - INFO - Preprocessor returned..
+[ 2025-02-11 23:09:26,269 ] 78 root - INFO - Initiate the Model Training..
+[ 2025-02-11 23:09:26,269 ] 80 root - INFO - Model Training Completed
+[ 2025-02-11 23:10:08,418 ] 97 root - INFO - The Params : 
+[ 2025-02-11 23:10:09,058 ] 97 root - INFO - The Params : 
+[ 2025-02-11 23:14:59,896 ] 97 root - INFO - The Params : 
+[ 2025-02-11 23:15:07,530 ] 97 root - INFO - The Params : 
+[ 2025-02-11 23:15:07,621 ] 95 root - INFO - {'Random Forest': 0.890813916163919, 'Decision Tree': 0.8635173952048988, 'Gradient Boosting': 0.7543313113688179, 'Logistic Regression': 0.7142964139622549, 'AdaBoost': 0.6979185013868427}
+[ 2025-02-11 23:15:42,103 ] 57 root - INFO - Attempting to load file from: D:\SureshKrishna\CompleteDS\Projects-EndToEnd\End-End-ML-Project-2\ml-networksecurity\Artifacts\02_11_2025_23_09_03\data_transformation\transformed_object\preprocessing.pkl
+[ 2025-02-11 23:15:42,122 ] 64 root - INFO - Loaded object type: <class 'sklearn.pipeline.Pipeline'>
+[ 2025-02-11 23:15:42,241 ] 128 root - INFO - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\02_11_2025_23_09_03\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.991271194943313, precision_score=0.988, recall_score=0.9945641232132072), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9750415973377704, precision_score=0.9654036243822076, recall_score=0.984873949579832))
+[ 2025-02-11 23:21:49,055 ] 57 root - INFO - Attempting to load file from: D:\SureshKrishna\CompleteDS\Projects-EndToEnd\End-End-ML-Project-2\ml-networksecurity\final_model\preprocessor.pkl
+[ 2025-02-11 23:21:49,079 ] 64 root - INFO - Loaded object type: <class 'sklearn.pipeline.Pipeline'>
+[ 2025-02-11 23:21:49,079 ] 57 root - INFO - Attempting to load file from: D:\SureshKrishna\CompleteDS\Projects-EndToEnd\End-End-ML-Project-2\ml-networksecurity\final_model\model.pkl
+[ 2025-02-11 23:21:49,234 ] 64 root - INFO - Loaded object type: <class 'sklearn.ensemble._forest.RandomForestClassifier'>
+[ 2025-02-11 23:21:49,238 ] 19 root - INFO - predict...

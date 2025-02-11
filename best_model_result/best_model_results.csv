@@ -1,0 +1,2 @@
+Model,Best Parameters,Best Score,Best Estimator
+"AdaBoostClassifier(learning_rate=0.1, n_estimators=64)","{'learning_rate': 0.1, 'n_estimators': 64}",0.9251469923111714,"AdaBoostClassifier(learning_rate=0.1, n_estimators=64)"
