@@ -23,7 +23,7 @@ from sklearn.ensemble import (
     GradientBoostingClassifier,
     RandomForestClassifier,
 )
-# import mlflow
+import mlflow
 from urllib.parse import urlparse
 
 # import dagshub
@@ -38,6 +38,18 @@ class ModelTrainer:
         except Exception as e:
             raise NetworkSecurityException(e,sys)
         
+    def track_mlflow(self,model,metrics):
+        with mlflow.start_run():
+            f1_score=metrics.f1_score
+            precision_score=metrics.precision_score
+            recall_score=metrics.recall_score
+
+            mlflow.log_metric("f1 score",f1_score)
+            mlflow.log_metric("precision score",precision_score)
+            mlflow.log_metric("recall score",recall_score)
+
+
+            mlflow.sklearn.log_model(model,"model")
 
     def train_model(self,xtrain,ytrain,xtest,ytest):
         models = {
@@ -86,13 +98,13 @@ class ModelTrainer:
 
         model=models[best_model]
         ytrain_pred=model.predict(xtrain)
-
         classification_train_metric=get_classification_score(y_true=ytrain,y_pred=ytrain_pred)
+        self.track_mlflow(model,classification_train_metric)
 
         ##To track the Mlflow
-
         ytest_pred=model.predict(xtest)
         classification_test_metric=get_classification_score(y_true=ytest,y_pred=ytest_pred)
+        self.track_mlflow(model,classification_test_metric)
         
         preprocessor = load_obj(file_path=self.data_transformation_artifact.transformed_object_file_path)
             

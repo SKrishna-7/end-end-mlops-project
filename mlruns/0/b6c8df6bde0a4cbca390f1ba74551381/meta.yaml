@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/SureshKrishna/CompleteDS/Projects-EndToEnd/End-End-ML-Project-2/NetworkSecurity/mlruns/0/b6c8df6bde0a4cbca390f1ba74551381/artifacts
+end_time: 1739272304940
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b6c8df6bde0a4cbca390f1ba74551381
+run_name: traveling-robin-420
+run_uuid: b6c8df6bde0a4cbca390f1ba74551381
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739272300360
+status: 3
+tags: []
+user_id: sures
