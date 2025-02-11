@@ -6,5 +6,7 @@ certifi
 scikit-learn
 yaml
 dill
+dagshub
+mlflow
 ## -e . 
 
