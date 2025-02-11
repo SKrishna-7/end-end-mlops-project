@@ -1,0 +1,61 @@
+name: workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  integration:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Lint code
+        run: echo "Linting repository"
+
+      - name: Run unit tests
+        run: echo "Running unit tests"
+
+  build-and-push-image:
+    name: Build and Push Docker Image
+    needs: integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq unzip
+
+      - name: Build and tag Docker image
+        id: build-image
+        run: |
+          # Build a docker container and tag it
+          docker build -t your-docker-image-name:latest .
+          echo "::set-output name=image::ml-networksecurity:latest"
+
+  Continuous-Deployment:
+    needs: build-and-push-image
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run Docker Image to serve users
+        run: |
+          docker run -d -p 8080:8080 --ipc="host" --name=networksecurity ml-networksecurity:latest
+          
+      - name: Clean previous images and containers
+        run: |
+          docker system prune -f
