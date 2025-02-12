@@ -19,7 +19,14 @@ The pipeline integrates tools and frameworks like MLflow, DagsHub, MongoDB, Fast
 
 ## Authors
 
-- [@SureshKrishnan](https://github.com/SKrishna-7)
+[@SureshKrishnan](https://github.com/SKrishna-7)
+
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Docker](https://img.shields.io/badge/Docker-Containerization-blue)
+![MLflow](https://img.shields.io/badge/MLflow-Experiment%20Tracking-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
+
 
   
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/suresh-krishnan-s/)
