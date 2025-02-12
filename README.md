@@ -5,9 +5,9 @@ This project demonstrates an End-to-End MLOps pipeline using a phishing dataset.
 
 The pipeline integrates tools and frameworks like MLflow, DagsHub, MongoDB, FastAPI, Docker, and GitHub Actions to automate processes like model training, deployment, and continuous integration/continuous deployment (CI/CD). automating everything from data ingestion to model deployment. This project focused on the MLOps lifecycle, leveraging powerful tools of machine learning workflows
 
-## Project Overview
+# Project Overview
 
-# Folder Structure
+## Folder Structure
 ![Folder Structure](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/floder.png)
 
 * `constants/`: Holds configuration files used throughout the pipeline.
@@ -55,6 +55,25 @@ The pipeline integrates tools and frameworks like MLflow, DagsHub, MongoDB, Fast
 
 ![Model Trainer](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/Modeltrainer.png)
 
+# Hyperparameter Tuning for Model Selection
+
+ During the model development process, I performed hyperparameter tuning to optimize the model's performance. Various hyperparameters were tested across different configurations to find the best performing model.
+ 
+## Models and Hyperparameters
+![Model](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/models.png)
+
+## Model Performance Comparison:
+Here are the results for different models tested:
+
+* AdaBoost: 92.51%
+* Random Forest: 89.08%
+* Decision Tree: 86.35%
+* Gradient Boosting: 82.43%
+* Logistic Regression: 79.43%
+
+## Best Model and Hyperparameter
+![Model](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/bestmodel.png)
+
 # Running the Project 
 
 ## Flask output
@@ -63,17 +82,40 @@ The pipeline integrates tools and frameworks like MLflow, DagsHub, MongoDB, Fast
 ![FlaskOutput](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/flask.png)
 
 ## Mlflow Ui
-![FlaskOutput](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/Dasghub.png)
+
+![FlaskOutput](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/mlflow.png)
 
 ## DagsHub
 
 DagsHub is used for tracking experiments and managing model versioning. 
-![Dasghub](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/Dasghub.png)
 
+![Dasghub](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/Dagshub.png)
+
+
+## Metrics over multiple runs
+
+![Metrics](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/combine.png)
+
+## Scores
+![Metrics](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/metrics.png)
+
+![Metrics](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/charts.png)
+
+# Prediction Report on Test Data
+After training and fine-tuning the model, I evaluated its performance on a separate test dataset. Below is the Prediction Report in the form of an HTML table.
+
+![pred](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/pred.png)
+
+
+# Conclusion
+This project has been an exciting journey through the entire Machine Learning lifecycle. From data ingestion and cleaning to model training, evaluation, and deployment, I’ve built a robust end-to-end MLOps pipeline. The key goal of this project was to demonstrate how to structure and automate a complete machine learning workflow, making it ready for production.
+
+By experimenting with multiple models and fine-tuning hyperparameters, I was able to identify the AdaBoost model as the most efficient for this particular task, achieving an accuracy of 92.51%. I then containerized the entire workflow using Docker, integrated continuous integration/continuous deployment (CI/CD) through GitHub Actions, and tracked model experiments using MLflow.
+
+This pipeline not only automates the machine learning lifecycle but also makes it easier to deploy, monitor, and update the models as new data becomes available.
 
 
 ## Authors
-
 [@SureshKrishnan](https://github.com/SKrishna-7)
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
