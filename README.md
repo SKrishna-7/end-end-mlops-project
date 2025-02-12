@@ -1,4 +1,4 @@
-# End to End MLOPS Project with ETL Pipeline - Building Network Security Project using Phishing Dataset
+    # End to End MLOPS Project with ETL Pipeline - Building Network Security Project using Phishing Dataset
 
 
 This project demonstrates an End-to-End MLOps pipeline using a phishing dataset.The pipeline encompasses data ingestion, validation, transformation, model training, evaluation, and deployment, The goal of the project is to build a robust machine learning model to detect phishing websites using a complete MLOps setup, ensuring that it can be maintained, versioned, and deployed in production with ease.
