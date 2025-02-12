@@ -5,9 +5,9 @@ This project demonstrates an End-to-End MLOps pipeline using a phishing dataset.
 
 The pipeline integrates tools and frameworks like MLflow, DagsHub, MongoDB, FastAPI, Docker, and GitHub Actions to automate processes like model training, deployment, and continuous integration/continuous deployment (CI/CD). automating everything from data ingestion to model deployment. This project focused on the MLOps lifecycle, leveraging powerful tools of machine learning workflows
 
-## Project Overview
+# Project Overview
 
-# Folder Structure
+## Folder Structure
 ![Folder Structure](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/floder.png)
 
 * `constants/`: Holds configuration files used throughout the pipeline.
