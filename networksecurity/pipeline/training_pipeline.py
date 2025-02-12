@@ -18,7 +18,7 @@ from networksecurity.entity.config_entity import ModelTrainerConfig
 from networksecurity.entity.artifacts_entity import ClassificationMetricArtifact
 from networksecurity.logging.logger import logging
 from networksecurity.exception.exception import NetworkSecurityException
-from networksecurity.constant.training_pipeline import TRAINING_BUCKET_NAME
+# from networksecurity.constant.training_pipeline import TRAINING_BUCKET_NAME
 import sys
 
 class TrainingPipeline:

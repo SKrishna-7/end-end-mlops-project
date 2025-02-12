@@ -1,0 +1,6 @@
+[ 2025-02-12 00:29:51,671 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-02-12 00:29:51,676 ] 107 dagshub - INFO - Accessing as SKrishna-7
+[ 2025-02-12 00:29:52,023 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/SKrishna-7/NetworkSecurity "HTTP/1.1 200 OK"
+[ 2025-02-12 00:29:52,328 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-02-12 00:29:52,331 ] 107 dagshub - INFO - Initialized MLflow to track repo "SKrishna-7/NetworkSecurity"
+[ 2025-02-12 00:29:52,331 ] 107 dagshub - INFO - Repository SKrishna-7/NetworkSecurity initialized!
