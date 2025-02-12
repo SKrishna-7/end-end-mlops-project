@@ -101,6 +101,11 @@ DagsHub is used for tracking experiments and managing model versioning.
 
 ![Metrics](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/charts.png)
 
+# Prediction Report on Test Data
+After training and fine-tuning the model, I evaluated its performance on a separate test dataset. Below is the Prediction Report in the form of an HTML table.
+
+![pred](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/pred.png)
+
 
 # Conclusion
 This project has been an exciting journey through the entire Machine Learning lifecycle. From data ingestion and cleaning to model training, evaluation, and deployment, I’ve built a robust end-to-end MLOps pipeline. The key goal of this project was to demonstrate how to structure and automate a complete machine learning workflow, making it ready for production.
