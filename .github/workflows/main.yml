@@ -42,8 +42,8 @@ jobs:
         id: build-image
         run: |
           # Build a docker container and tag it
-          docker build -t your-docker-image-name:latest .
-          echo "::set-output name=image::ml-networksecurity:latest"
+          docker build -t end-end-mlops-project:latest .
+          echo "::set-output name=image::end-end-mlops-project:latest"
 
   Continuous-Deployment:
     needs: build-and-push-image
@@ -54,7 +54,7 @@ jobs:
 
       - name: Run Docker Image to serve users
         run: |
-          docker run -d -p 8080:8080 --ipc="host" --name=networksecurity ml-networksecurity:latest
+          docker run -d -p 8080:8080 --ipc="host" --name=end-end-mlops-project end-end-mlops-project:latest
           
       - name: Clean previous images and containers
         run: |
