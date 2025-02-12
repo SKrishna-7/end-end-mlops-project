@@ -55,6 +55,22 @@ The pipeline integrates tools and frameworks like MLflow, DagsHub, MongoDB, Fast
 
 ![Model Trainer](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/Modeltrainer.png)
 
+# Running the Project 
+
+## Flask output
+ After successfully setting up and running the project, the Flask API should be up and running. Below is an example of the output you would see when accessing the API.
+
+![FlaskOutput](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/flask.png)
+
+## Mlflow Ui
+![FlaskOutput](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/Dasghub.png)
+
+## DagsHub
+
+DagsHub is used for tracking experiments and managing model versioning. 
+![Dasghub](https://github.com/SKrishna-7/end-end-mlops-project/blob/main/ProjectStructure/Dasghub.png)
+
+
 
 ## Authors
 
