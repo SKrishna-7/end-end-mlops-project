@@ -11,5 +11,5 @@ mlflow
 uvicorn
 fastapi
 
--e . 
+## -e . 
 
