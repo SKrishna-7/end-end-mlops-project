@@ -54,7 +54,7 @@ jobs:
 
       - name: Run Docker Image to serve users
         run: |
-          docker run -d -p 8080:8080 --ipc="host" --name=end-end-mlops-project end-end-mlops-project:latest
+          docker run -d -p 8080:8080 --ipc="host" --name=end-end-mlops-project:latest
           
       - name: Clean previous images and containers
         run: |
