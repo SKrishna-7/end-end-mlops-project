@@ -1,2 +1,6 @@
 venv
 .env
+_actions
+_PipelineMapping
+_temp
+_tool
